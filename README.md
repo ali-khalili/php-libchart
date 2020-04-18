@@ -1,7 +1,7 @@
-Project discontinued
+PHP LibChart
 ====================
 
-I'm sorry to say that I don't have sufficient interest in continuing to develop Libchart, and I'm no longer supporting it. 
+This is a fork of [libchart](https://github.com/naku/libchart) by Jean-Marc Tremeaux which is updated to use auto loading/composer. 
 
 
 Libchart - Simple PHP chart drawing library
@@ -15,22 +15,19 @@ Features
     * Bar charts (horizontal or vertical).
     * Pie charts.
     * Line charts.
-    * Compatibility with PHP 5.
+    * Compatibility with PHP 5.3+
 
 Dependencies
 ============
 
-    * PHP 5, compiled with:
+    * PHP 5.3, compiled with:
     * GD 2+
     * FreeType 2+
 
 Installation
 ============
 
-In order to use Libchart, unpack the archive in you project directory and
-include libchart.php. Please have a look at the demo files for more information.
-
-You need to chmod 777 the "generated" directory in order to generate the demos.
+In order to use Libchart, use `composer dump-autoload` and then, include the *autoload.php* file to your project.
 
 There is also a tutorial available at the project homepage.
 

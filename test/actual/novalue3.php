@@ -1,13 +1,13 @@
 <?php
-    require_once '../common.php';
+require_once '../../vendor/autoload.php';
 
-    header("Content-type: image/png");
-    
-    $chart = new LineChart();
+header("Content-type: image/png");
 
-#    $chart->addPoint(new Point("06-01", 0));
-#    $chart->addPoint(new Point("06-02", 10));
+$chart = new \PHPLibChart\Views\Chart\LineChart();
 
-    $chart->setTitle("Sales for 2006");
-    $chart->render();
+#    $chart->addPoint(new \PHPLibChart\Models\Point("06-01", 0));
+#    $chart->addPoint(new \PHPLibChart\Models\Point("06-02", 10));
+
+$chart->setTitle("Sales for 2006");
+$chart->render();
 ?>

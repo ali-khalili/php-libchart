@@ -1,25 +1,27 @@
 <?php
-    require_once '../common.php';
-    
-    class ThousandLabelGenerator implements LabelGenerator {
-        function generateLabel($value) {
-            return ((int) ($value / 1000)) . "k";
-        }
+require_once '../../vendor/autoload.php';
+
+class ThousandLabelGenerator
+{
+    function generateLabel($value)
+    {
+        return ((int)($value / 1000)) . "k";
     }
-    
-    header("Content-type: image/png");
-    
-    $chart = new HorizontalBarChart(500, 200);
-     
-    $dataSet = new XYDataSet();
-    $dataSet->addPoint(new Point("Jan 2005", 27300));
-    $dataSet->addPoint(new Point("Feb 2005", 32100));
-    $dataSet->addPoint(new Point("March 2005", 44200));
-    $dataSet->addPoint(new Point("April 2005", 71100));
-    $chart->setDataSet($dataSet);
-    
-    $chart->setTitle("Monthly usage for www.example.com");
-    $chart->getPlot()->setLabelGenerator(new ThousandLabelGenerator());
-	$chart->getPlot()->setGraphPadding(new Padding(5, 30, 20, 100));
-    $chart->render();
+}
+
+header("Content-type: image/png");
+
+$chart = new \PHPLibChart\Views\Chart\HorizontalBarChart(500, 200);
+
+$dataSet = new \PHPLibChart\Models\XYDataSet();
+$dataSet->addPoint(new \PHPLibChart\Models\Point("Jan 2005", 27300));
+$dataSet->addPoint(new \PHPLibChart\Models\Point("Feb 2005", 32100));
+$dataSet->addPoint(new \PHPLibChart\Models\Point("March 2005", 44200));
+$dataSet->addPoint(new \PHPLibChart\Models\Point("April 2005", 71100));
+$chart->setDataSet($dataSet);
+
+$chart->setTitle("Monthly usage for www.example.com");
+$chart->getPlot()->setLabelGenerator(new ThousandLabelGenerator());
+$chart->getPlot()->setGraphPadding(new \PHPLibChart\Views\Primitive\Padding(5, 30, 20, 100));
+$chart->render();
 ?>

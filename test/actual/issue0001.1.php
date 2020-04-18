@@ -1,18 +1,18 @@
 <?php
-    require_once '../common.php';
+    require_once '../../vendor/autoload.php';
 
     header("Content-type: image/png");
     
-    $chart = new PieChart(500, 250);
+    $chart = new \PHPLibChart\Views\Chart\PieChart(500, 250);
 
-    $dataSet = new XYDataSet();
-    $dataSet->addPoint(new Point("a (4872)", 4872));
-    $dataSet->addPoint(new Point("b (4774)", 4774));
-    $dataSet->addPoint(new Point("c (288)", 288));
-    $dataSet->addPoint(new Point("d (18)", 18));
-    $dataSet->addPoint(new Point("e (9)", 9));     
-    $dataSet->addPoint(new Point("f (0)", 0));
-    $dataSet->addPoint(new Point("g (0)", 0));
+    $dataSet = new \PHPLibChart\Models\XYDataSet();
+    $dataSet->addPoint(new \PHPLibChart\Models\Point("a (4872)", 4872));
+    $dataSet->addPoint(new \PHPLibChart\Models\Point("b (4774)", 4774));
+    $dataSet->addPoint(new \PHPLibChart\Models\Point("c (288)", 288));
+    $dataSet->addPoint(new \PHPLibChart\Models\Point("d (18)", 18));
+    $dataSet->addPoint(new \PHPLibChart\Models\Point("e (9)", 9));
+    $dataSet->addPoint(new \PHPLibChart\Models\Point("f (0)", 0));
+    $dataSet->addPoint(new \PHPLibChart\Models\Point("g (0)", 0));
     
     $chart->setDataSet($dataSet);
     

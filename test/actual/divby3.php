@@ -1,15 +1,15 @@
 <?php
-    require_once '../common.php';
+require_once '../../vendor/autoload.php';
 
-    header("Content-type: image/png");
-    
-    $chart = new LineChart();
+header("Content-type: image/png");
 
-    $dataSet = new XYDataSet();
-    $dataSet->addPoint(new Point("06-01", 0));
-    $dataSet->addPoint(new Point("06-02", 0));
-    $chart->setDataSet($dataSet);
-    
-    $chart->setTitle("Sales for 2006");
-    $chart->render();
+$chart = new \PHPLibChart\Views\Chart\LineChart();
+
+$dataSet = new \PHPLibChart\Models\XYDataSet();
+$dataSet->addPoint(new \PHPLibChart\Models\Point("06-01", 0));
+$dataSet->addPoint(new \PHPLibChart\Models\Point("06-02", 0));
+$chart->setDataSet($dataSet);
+
+$chart->setTitle("Sales for 2006");
+$chart->render();
 ?>
