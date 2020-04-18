@@ -120,4 +120,18 @@ abstract class Chart
     {
         $this->plot->setTitle($title);
     }
+
+    public abstract function render($filename = null);
+
+    /**
+     * @return false|string
+     */
+    public function getRenderedImage()
+    {
+        ob_start();
+        $this->render();
+        $image = ob_get_contents();
+        ob_clean();
+        return $image;
+    }
 }

@@ -22,5 +22,5 @@ $chart->setDataSet($dataSet);
 
 $chart->setTitle("Monthly usage for www.example.com");
 $chart->getPlot()->setLabelGenerator(new ThousandLabelGenerator());
-$chart->render();
-?>
+
+echo $chart->getRenderedImage();
